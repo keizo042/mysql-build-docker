@@ -5,6 +5,7 @@ WORKDIR /mysql_build
 RUN yum update -y && \
       yum groupinstall -y "Development Tools" && \
       yum install -y cmake openssl-devel ncurses-devel \
+      yum --enablerepo=PowerTools install -y  rpcgen \
       git clone https://github.com/kamipo/mysql-build.git
 
 RUN cd mysql-build && \
